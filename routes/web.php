@@ -25,5 +25,5 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('categoria', CategoriaController::class);
-Route::resource('producto', ProductoController::class);
+Route::resource('categoria', CategoriaController::class)->middleware(['auth']);
+Route::resource('producto', ProductoController::class)->middleware(['auth']);
